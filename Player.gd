@@ -34,6 +34,9 @@ func _process(delta):
 		$AnimatedSprite.animation = "walk_right"
 		$AnimatedSprite.flip_v = false
 		$AnimatedSprite.flip_h = direction.x < 0
-	elif direction.y != 0:
+	elif direction.y < 0:
 		$AnimatedSprite.animation = "walk_up"
-		$AnimatedSprite.flip_v = direction.y > 0
+		#$AnimatedSprite.flip_v = direction.y > 0
+	elif direction.y > 0:
+		$AnimatedSprite.animation = "walk_down"
+		#$AnimatedSprite.flip_v = direction.y > 0

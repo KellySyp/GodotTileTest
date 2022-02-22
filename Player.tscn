@@ -92,8 +92,8 @@ height = 6.0
 
 [node name="Player" type="Area2D"]
 position = Vector2( 47, 34 )
-scale = Vector2( 5, 5 )
 script = ExtResource( 2 )
+speed = 100.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 13 )

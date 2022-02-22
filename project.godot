@@ -14,6 +14,12 @@ config/name="Tile Test"
 run/main_scene="res://Player.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+window/stretch/shrink=5.0
+
 [input]
 
 ui_left={
