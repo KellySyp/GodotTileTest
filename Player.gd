@@ -1,7 +1,8 @@
-extends Area2D
+extends KinematicBody2D
 
 export var speed = 400.0
 var screen_size = Vector2.ZERO
+var velocity = Vector2.ZERO
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -25,10 +26,18 @@ func _process(delta):
 	else:
 		$AnimatedSprite.stop()
 	
+	#velocity.x = direction.x * speed * delta
+	#velocity.y = direction.y * speed * delta
+	#velocity = move_and_collide(velocity)
 	position += direction * speed * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	move_and_collide(velocity * delta)
+	#position.x = clamp(position.x, 0, screen_size.x)
+	#position.y = clamp(position.y, 0, screen_size.y)
 	#print(position.y)
+	
+	#var collision = move_and_collide(velocity * delta)
+	#if collision:
+	#	print("I collided with ", collision.collider.name)
 	
 	if direction.x != 0:
 		$AnimatedSprite.animation = "walk_right"
